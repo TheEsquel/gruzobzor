@@ -160,7 +160,7 @@
                         <div class="Form_Field">
                     <span class="DropdownOuter validate-load-pack">
                     <select class="Dropdown" data-dropdown="" name="load[pack]"
-                            data-dropdown-clear="true" data-dropdown-search="false" placeholder="Выберите упаковку" style="width: 85px;" data-validator-field="">
+                            data-dropdown-clear="true" data-dropdown-search="false" placeholder="Выберите упаковку" style="width: 90px;" data-validator-field="">
                                             <option value="0">Нет</option>
                                             <option value="1">1 класс опасности - взрывчатые материалы (ВМ)</option>
                                             <option value="2">2 класс опасности - газы сжатые, сжиженные и растворенные под давлением</option>
@@ -562,11 +562,9 @@
 									<span class="DropdownOuter">
 									  <select class="Dropdown" data-dropdown="" name="load[weight_unit]"
 											  data-dropdown-search="false" placeholder="" style="width: 64px;">   
-											  <!-- потом поставить  64px -->
-											  <select name="" id="">
 													<option value="russia" style="background-image:url(img/russia.svg);" selected></option>
 													<option value="saab"  style="background-image:url(img/macao.svg);"></option>
-												</select>	
+
 									  </select>
 									</span>
 									<div class="Form_FieldItem">
@@ -616,12 +614,12 @@
 						</label>
 					</div>
 				</div>
-				<div class="Form_Item" data-company="block" style="display: none;">
-					<div class="Form_Name">Организация или ИП</div>
+				<div class="Form_Item" data-company="block" >
+					<div class="Form_Name">Название организации</div>
 					<div class="Form_Field">
             <span class="TextboxOuter validate-load-company_full_name validate-load-company_short_name validate-load-opf validate-load-inn" data-validator-required="">
               <input type="text" class="Textbox" name="load[company_full_name]"
-                     style="width: 255px;" placeholder="Название, ИНН или ОГРН" data-validator-field="" />
+                     style="width: 364px;" placeholder="Деловые полоски" data-validator-field="" />
               <span class="Description Description-Block" id="companyInfo"></span>
             </span>
 						<input type="hidden" name="load[company_short_name]" id="input-company-name">
@@ -629,6 +627,21 @@
 						<input type="hidden" name="load[inn]" id="input-inn">
 					</div>
 				</div>
+
+				<div class="Form_Item" data-company="block" >
+					<div class="Form_Name">ИНН</div>
+					<div class="Form_Field">
+            <span class="TextboxOuter validate-load-company_full_name validate-load-company_short_name validate-load-opf validate-load-inn" data-validator-required="">
+              <input type="text" class="Textbox" name="load[company_full_name]"
+                     style="width: 364px;" placeholder="123456789012" data-validator-field="" />
+              <span class="Description Description-Block">12 цифр</span>
+            </span>
+						<input type="hidden" name="load[company_short_name]" id="input-company-name">
+						<input type="hidden" name="load[opf]" id="input-opf">
+						<input type="hidden" name="load[inn]" id="input-inn">
+					</div>
+				</div>
+
 				<div class="Form_Item Form_Item-Submit">
 					<button class="Button Button-Success remote-form" id="form-submit-btn">
 						<span class="ButtonText">Разместить груз и завершить регистрацию</span>
