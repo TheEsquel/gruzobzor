@@ -567,15 +567,7 @@
 
 									  </select>
 									</span>
-									<div class="Form_FieldItem">
-											<span class="DropdownOuter">
-											  <select class="Dropdown" data-dropdown="" name="load[weight_unit]"
-													  data-dropdown-search="false" placeholder="" style="width: 75px;">
-													  <option value="russia" style="background-image:url(img/russia.svg);" selected></option>
-													  <option value="saab"  style="background-image:url(img/macao.svg);"></option>
-											  </select>
-											</span>
-													  </div>
+
 							</div>			
             <span class="TextboxOuter PhoneCode validate-load-mobile validate-load-login" data-validator-required="">
             	<input type="text" name="load[mobile]"
@@ -604,43 +596,48 @@
             </span>
 					</div>
 				</div>
-				<div class="Form_Item">
-					<div class="Form_Field">
-						<label class="Checkbox Checkbox-Block" data-type="checkbox">
-							<input type="checkbox" class="Checkbox_Button" name="load[has_company]" value="1" data-company="checkbox" />
-							<span class="Checkbox_Text">Я представитель компании
-                <span class="Description Description-Block">Компаниям доступно больше возможностей системы</span>
-              </span>
-						</label>
-					</div>
+				<div class="Form_Item" id="companyCase">
+						<div class="Form_Field">
+							<label class="Checkbox Checkbox-Block" data-type="checkbox">
+								<input type="checkbox" class="Checkbox_Button" name="load[has_company]" value="1" data-company="checkbox"  id='checkboxCompany' v-model="isACompany" @click: 'companyToggle'/>
+								<span class="Checkbox_Text">Я представитель компании  
+					<span class="Description Description-Block">Компаниям доступно больше возможностей системы</span>
+				</span>
+							</label>
+						</div>
+ 
+   <div id="companyForm">
+		<div class="Form_Item" data-company="block" >
+				<div class="Form_Name">Название организации</div>
+				<div class="Form_Field">
+		<span class="TextboxOuter validate-load-company_full_name validate-load-company_short_name validate-load-opf validate-load-inn" data-validator-required="">
+		<input type="text" class="Textbox" name="load[company_full_name]"
+				style="width: 364px;" placeholder="Деловые полоски" data-validator-field="" />
+		<span class="Description Description-Block" id="companyInfo"></span>
+		</span>
+					<input type="hidden" name="load[company_short_name]" id="input-company-name">
+					<input type="hidden" name="load[opf]" id="input-opf">
+					<input type="hidden" name="load[inn]" id="input-inn">
 				</div>
-				<div class="Form_Item" data-company="block" >
-					<div class="Form_Name">Название организации</div>
-					<div class="Form_Field">
-            <span class="TextboxOuter validate-load-company_full_name validate-load-company_short_name validate-load-opf validate-load-inn" data-validator-required="">
-              <input type="text" class="Textbox" name="load[company_full_name]"
-                     style="width: 364px;" placeholder="Деловые полоски" data-validator-field="" />
-              <span class="Description Description-Block" id="companyInfo"></span>
-            </span>
-						<input type="hidden" name="load[company_short_name]" id="input-company-name">
-						<input type="hidden" name="load[opf]" id="input-opf">
-						<input type="hidden" name="load[inn]" id="input-inn">
-					</div>
+			</div>
+
+			<div class="Form_Item" data-company="block" >
+				<div class="Form_Name">ИНН</div>
+				<div class="Form_Field">
+		<span class="TextboxOuter validate-load-company_full_name validate-load-company_short_name validate-load-opf validate-load-inn" data-validator-required="">
+		<input type="text" class="Textbox" name="load[company_full_name]"
+				style="width: 364px;" placeholder="123456789012" data-validator-field="" />
+		<span class="Description Description-Block">12 цифр</span>
+		</span>
+					<input type="hidden" name="load[company_short_name]" id="input-company-name">
+					<input type="hidden" name="load[opf]" id="input-opf">
+					<input type="hidden" name="load[inn]" id="input-inn">
+				</div>
+			</div>
+   </div>
+
 				</div>
 
-				<div class="Form_Item" data-company="block" >
-					<div class="Form_Name">ИНН</div>
-					<div class="Form_Field">
-            <span class="TextboxOuter validate-load-company_full_name validate-load-company_short_name validate-load-opf validate-load-inn" data-validator-required="">
-              <input type="text" class="Textbox" name="load[company_full_name]"
-                     style="width: 364px;" placeholder="123456789012" data-validator-field="" />
-              <span class="Description Description-Block">12 цифр</span>
-            </span>
-						<input type="hidden" name="load[company_short_name]" id="input-company-name">
-						<input type="hidden" name="load[opf]" id="input-opf">
-						<input type="hidden" name="load[inn]" id="input-inn">
-					</div>
-				</div>
 
 				<div class="Form_Item Form_Item-Submit">
 					<button class="Button Button-Success remote-form" id="form-submit-btn">
@@ -670,5 +667,25 @@
 	<script type="text/javascript" src="/static/components/select2/i18n/ru.js"></script>
 	<script type="text/javascript" src="/static/components/suggestions-jquery/dist/js/jquery.suggestions.min.js"></script>
 	<script type="text/javascript" src="/static/js/ui.js"></script>
+
+
 <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"34c511cb0d","applicationID":"35427932","transactionName":"Y1UHZBRRW0UCB0ZdVlofJFMSWVpYTDZXU1BHRBdREllaWCALXEBLW1wJVRQfVlcRA10=","queueTime":0,"applicationTime":231,"atts":"TxIEElxLSEs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script>
+
+var app =  new Vue ({
+	el: '#companyCase',
+	comForm: '#companyForm',
+    data: {
+        isACompany: false
+    },
+	methods: {
+		companyToggle: ()  => {
+
+			isACompany = !isACompany;
+
+		}
+	}
+})
+</script>
+
 </html>
