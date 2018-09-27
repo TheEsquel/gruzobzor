@@ -37,8 +37,6 @@ body
         a
             color: #000
             text-decoration: none
-
-
     .main
         .mainInner
             width: 1140px
@@ -48,6 +46,11 @@ body
             background-color: #f4f4f4
             box-shadow: 2px 2px 2px rgba(194, 194, 194, .5) 
             box-sizing: border-box
+
+            display: flex
+            flex-direction: row
+            justify-content: center
+            flex-wrap: wrap
             .menuRight
                 margin-top: 0
                 float: right
@@ -74,7 +77,7 @@ body
                                 color: #a8a8a8
                                 margin: 5px 0 0 0 
             .mainContent
-                margin-right: 285px
+                //margin-right: 285px
                 .registrationForm
                     max-width: 635px
                     margin: 0 auto
@@ -102,13 +105,15 @@ body
                                 display: block
                                 width: 23px
                                 height: 17px
-                                background: url('../img/russia.png')
+                                background: url("../img/flag_ru.png") no-repeat
+                                background-size: cover
+                                margin: 9px 12px
                             .radioText
                                 display: block 
                                 margin: 5px 0 
                             .textBox
-                                width: 100%
-                                max-width: 100%
+                                // width: 100%
+                                // max-width: 100%
                                 height: 35px
                                 padding: 4px 10px 4px 10px
                                 font-weight: 400
@@ -119,18 +124,26 @@ body
                                 outline: 0   
                                 box-sizing: border-box 
                                 background-color: #fff
-                            .checkBox
                             .formTip
                                 display: block
                                 margin: 5px 0 0 30px
                                 font-size: 13px
                                 color: #a8a8a8
                                 line-height: 13px  
-                            #countryPicker
+                            .countrySelector
                                 width: 64px
                                 height: 35px
                                 margin-right: 10px
-
+                                display: inline
+                                padding: 0
+                                .countrySelectorInner
+                                    display: flex
+                                    .countrySelectorArrow
+                                        background: url(../img/arrow_down1.png) no-repeat
+                                        background-size: cover
+                                        height: 5px
+                                        width: 9px
+                                        margin-top: 15px
                     .formSubmit
                         display: block
                         margin-top: 200px
@@ -150,6 +163,8 @@ body
                             font-family: $mainFont
                             line-height: 14px
                             text-align: center
+                            border: thin
+                            border-radius: 5px
                             .buttonText
                                 color: #ffffff
                     .formContract

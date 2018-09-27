@@ -27,7 +27,86 @@
 
 	<div class="main">
 		<div class="mainInner">
-				<aside class="menuRight">
+			<section class="mainContent">
+				<form action="" class="registrationForm">
+					<b><h1>Регистрация</h1></b>
+					<div class="formItem">
+						<div class="formDescription">Деятельность</div>
+						<div class="formField">
+							<span class="radioText"><input type="radio" value="transporter">Я перевозчик</span>
+							<span class="radioText"><input type="radio" value="shipper">Я грузоотправитель</span>
+						</div>
+					</div>
+					<div class="formItem">
+						<div class="formDescription">Номер ВУ</div>
+						<div class="formField">
+							<input type="text" style="width: 229px"  class="textBox"
+								   placeholder="Введите серию и номер ВУ">
+						</div>
+					</div>
+					<div class="formItem">
+						<div class="formDescription">Контактное лицо</div>
+						<div class="formField">
+							<input type="text" style="width: 384px"  class="textBox"
+								   placeholder="Фамилия Имя Отчество">
+						</div>
+					</div>
+					<div class="formItem">
+						<div class="formDescription">Мобильный</div>
+						<div class="formField" style="display: flex">
+							<div name="countryPicker" id="countryPicker" class='textBox countrySelector'>
+								<div class="countrySelectorInner">
+									<i class="flag"></i>
+									<div class="countrySelectorArrow"></div>
+								</div>
+							</div>
+							<input type="tel" style="width: 170px"  class="textBox"
+								   name="phone" placeholder="+7 _ _ _  _ _ _  _ _ _ _"
+								   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+							/>
+						</div>
+					</div>
+					<div class="formItem">
+						<div class="formDescription">Электронная почта</div>
+						<div class="formField">
+							<input type="email" style="width: 327px"  class="textBox"
+								   placeholder="Укажите адрес почты">
+						</div>
+					</div>
+					<div class="formItem">
+						<div class="formDescription">Город</div>
+						<div class="formField">
+							<input type="email" style="width: 319px"  class="textBox"
+								   placeholder="Начните набирать название нас. пункта">
+						</div>
+					</div>
+					<div class="formItem">
+						<div class="formField">
+							<input type="checkbox" class="Checkbox_Button" name="load[has_company]" value="1" data-company="checkbox" />
+
+							<span class="Checkbox_Text">Я представитель компании </span>
+							<span class="formTip">Компаниям доступно больше возможностей системы</span>
+						</div>
+					</div>
+					<div class="formItem formSubmit">
+						<button class="buttonSubmit" id="form-submit-btn">
+							<span class="buttonText">Добавить документы и завершить регистрацию</span>
+						</button>
+					</div>
+					<div class="formField formContract">
+						<span ></span>
+						Регистрируясь, вы принимаете условия
+						<a href="#" target="_blank" class="WithIcon">
+							<span class="WithIcon_Text">договора оферты</span>
+							<i class="WithIcon_Icon icon-newwindow"></i>
+						</a>
+					</div>
+
+
+				</form>
+			</section>
+
+			<aside class="menuRight">
 					<div class="benefitsGroup">
 						<div class="benefitsItem">
 							<div class="benefitsItemPic">
@@ -58,79 +137,6 @@
 						</div>
 					</div>	
 				</aside>
-					<section class="mainContent">
-						<form action="" class="registrationForm">
-							<b><h1>Регистрация</h1></b>
-							<div class="formItem">
-								<div class="formDescription">Деятельность</div>
-								<div class="formField">
-									<span class="radioText"><input type="radio" value="transporter">Я перевозчик</span>
-									<span class="radioText"><input type="radio" value="shipper">Я грузоотправитель</span>
-								</div>
-							</div>
-							<div class="formItem">
-									<div class="formDescription">Номер ВУ</div>
-									<div class="formField">
-										<input type="text" style="width: 229px"  class="textBox"
-										placeholder="Введите серию и номер ВУ">	
-									</div>
-							</div>	
-							<div class="formItem">
-								<div class="formDescription">Контактное лицо</div>
-								<div class="formField">
-									<input type="text" style="width: 384px"  class="textBox"
-									placeholder="Фамилия Имя Отчество">	
-								</div>
-							</div>	
-							<div class="formItem">
-								<div class="formDescription">Мобильный</div>
-								<div class="formField" style="display: flex">	
-									<div name="coutryPicker" id="coutryPicker" class='textBox coutrySelect'></div>		
-									<input type="tel" style="width: 170px"  class="textBox"
-									name="phone" placeholder="+7 _ _ _  _ _ _  _ _ _ _" 
-									 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-									 />
-								</div>
-							</div>
-							<div class="formItem">
-								<div class="formDescription">Электронная почта</div>
-								<div class="formField">
-									<input type="email" style="width: 327px"  class="textBox"
-									placeholder="Укажите адрес почты">	
-								</div>
-							</div>
-							<div class="formItem">
-								<div class="formDescription">Город</div>
-								<div class="formField">
-									<input type="email" style="width: 319px"  class="textBox"
-									placeholder="Начните набирать название нас. пункта">	
-								</div>
-							</div>	
-							<div class="formItem">
-								<div class="formField">
-										<input type="checkbox" class="Checkbox_Button" name="load[has_company]" value="1" data-company="checkbox" />
-										
-										<span class="Checkbox_Text">Я представитель компании </span>
-										<span class="formTip">Компаниям доступно больше возможностей системы</span>
-								</div>
-							</div>	
-							<div class="formItem formSubmit">
-									<button class="buttonSubmit" id="form-submit-btn">
-										<span class="buttonText">Добавить документы и завершить регистрацию</span>
-									</button>
-							</div>	
-							<div class="formField formContract">
-								<span ></span>
-								Регистрируясь, вы принимаете условия
-								<a href="#" target="_blank" class="WithIcon">
-									<span class="WithIcon_Text">договора оферты</span>
-									<i class="WithIcon_Icon icon-newwindow"></i>
-								</a>
-							</div>
-							
-
-						</form>
-					</section>
 		</div>
 
 	</div>
