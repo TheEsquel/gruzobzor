@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/vue.js"></script>
 	<script src="./js/ui-vue.js"></script>
+	<script src="./js/jquery.js"></script>
 </head>
 <body>
 	<header>
@@ -30,13 +31,30 @@
 					<div class="benefitsGroup">
 						<div class="benefitsItem">
 							<div class="benefitsItemPic">
-								<img src="./img/megaphone.png" alt="" class="benefitsImage">
+								<img src="./img/megaphone.png" alt="megaphone" class="benefitsImage">
 							</div>
 							<div class="benefitsText">
 								<h3>Тысячи активных участников</h3>	
 								<p>В системе зарегистрировано 50000 перевозчиков</p>
 							</div>
-
+						</div>
+						<div class="benefitsItem">
+							<div class="benefitsItemPic">
+								<img src="./img/star.png" alt="star" class="benefitsImage">
+							</div>
+							<div class="benefitsText">
+								<h3>Система строго следит за надежностью контрагентов</h3>	
+								<p>Мы проверяем всех <br>участников системы</p>
+							</div>
+						</div>
+						<div class="benefitsItem">
+							<div class="benefitsItemPic">
+								<img src="./img/0%.png" alt="0%" class="benefitsImage" style="width: 29px; height: 16px;">
+							</div>
+							<div class="benefitsText">
+								<h3>Нет комиссий и скрытых сборов</h3>	
+								<p>Пользование системой бесплатно для всех</p>
+							</div>
 						</div>
 					</div>	
 				</aside>
@@ -51,21 +69,68 @@
 								</div>
 							</div>
 							<div class="formItem">
-								<div class="formDescription">Контактное лицо</div>
-								<div class="formField">
-									<input type="text" style="width: 384px"  class="textBox">	
-								</div>
+									<div class="formDescription">Номер ВУ</div>
+									<div class="formField">
+										<input type="text" style="width: 229px"  class="textBox"
+										placeholder="Введите серию и номер ВУ">	
+									</div>
 							</div>	
 							<div class="formItem">
 								<div class="formDescription">Контактное лицо</div>
 								<div class="formField">
-									<input type="text" style="width: 384px"  class="textBox">	
+									<input type="text" style="width: 384px"  class="textBox"
+									placeholder="Фамилия Имя Отчество">	
 								</div>
-							</div>														
+							</div>	
+							<div class="formItem">
+								<div class="formDescription">Мобильный</div>
+								<div class="formField" style="display: flex">	
+									<div name="coutryPicker" id="coutryPicker" class='textBox coutrySelect'></div>		
+									<input type="tel" style="width: 170px"  class="textBox"
+									name="phone" placeholder="+7 _ _ _  _ _ _  _ _ _ _" 
+									 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+									 />
+								</div>
+							</div>
+							<div class="formItem">
+								<div class="formDescription">Электронная почта</div>
+								<div class="formField">
+									<input type="email" style="width: 327px"  class="textBox"
+									placeholder="Укажите адрес почты">	
+								</div>
+							</div>
+							<div class="formItem">
+								<div class="formDescription">Город</div>
+								<div class="formField">
+									<input type="email" style="width: 319px"  class="textBox"
+									placeholder="Начните набирать название нас. пункта">	
+								</div>
+							</div>	
+							<div class="formItem">
+								<div class="formField">
+										<input type="checkbox" class="Checkbox_Button" name="load[has_company]" value="1" data-company="checkbox" />
+										
+										<span class="Checkbox_Text">Я представитель компании </span>
+										<span class="formTip">Компаниям доступно больше возможностей системы</span>
+								</div>
+							</div>	
+							<div class="formItem formSubmit">
+									<button class="buttonSubmit" id="form-submit-btn">
+										<span class="buttonText">Добавить документы и завершить регистрацию</span>
+									</button>
+							</div>	
+							<div class="formField formContract">
+								<span ></span>
+								Регистрируясь, вы принимаете условия
+								<a href="#" target="_blank" class="WithIcon">
+									<span class="WithIcon_Text">договора оферты</span>
+									<i class="WithIcon_Icon icon-newwindow"></i>
+								</a>
+							</div>
+							
 
 						</form>
 					</section>
-
 		</div>
 
 	</div>
